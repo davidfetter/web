@@ -1,0 +1,30 @@
+#date: 20170508
+#title_ja: 弊社社員の研究発表がGTC2017のTop-5ポスターに選定されました
+#title_en: Our research was chosen to the top-5 finalist of GTC2017 posters
+<p>
+<img src="images/press_20170508a.jpg" width="360">
+</p>
+<p>
+<span lang="ja">
+米NVIDIA社が主催する世界最大のGPU技術カンファレンスである GPU Technology Conference 2017（5月8日(月)～5月11日(木)、米国サンノゼ市）において、弊社チーフアーキテクトの海外による『An Intelligent Storage for PostgreSQL Database』と題したポスター発表が、約140件の研究開発ポスター発表の中からTop-5 Finalistに選定されました。
+</span>
+<span lang="en">
+On the GPU Technology Conference 2017 held by NVIDIA (From 8th-May through 11th, 2017, San Jose), our research poster <em>An Intelligent Storage for PostgreSQL Database</em> was chosen to the top-5 finalist in the 140 research & development posters.
+</span>
+</p>
+<p>
+<span lang="ja">
+本発表は、HeteroServer製品の中核技術の一つであるSSD-to-GPUダイレクトSQL実行機能のコンセプト、技術概要、ベンチマーク結果を紹介したものです。
+その中では、TeslaシリーズGPUの機能であるGPUDirect RDMAをNVMe-SSDからのデータ読出しに応用し、不要データのふるい落としやJOIN/GROUP BYなど問い合わせ処理をGPUで並列実行してデータ量を削減する事で、従来は専ら計算集約的な問題のアクセラレータとして使用されてきたGPUを、I/O集約的な問題に対しても有効に機能することを示しています。
+</span>
+<span lang="en">
+This research introduces the concept, technology overview and benchmark results of the SSD-to-GPU Direct SQL Execution feature which is one of the core functionalities of our HeteroServer product.
+It presents GPU devices, usually considered as an accelerator of computing intensive workloads, are also capable to work upon I/O intensive workloads using our application of GPUDirect RDMA. It is utilized to filter out unnecessary data, or to execute JOIN/GROUP BY in the middle of data flow.
+</span>
+</p>
+<p>
+<ul>
+<li><a href="http://www.gputechconf.com/resources/poster-gallery/2017/accelerated-analytics">http://www.gputechconf.com/resources/poster-gallery/2017/accelerated-analytics</a></li>
+<li><a href="blobs/P7130_KAIGAI_SSD2GPU_FIXTYPO.pdf" target="_blank">P7130 - An Intelligent Storage for PostgreSQL Database [PDF]</a>
+</ul>
+</p>

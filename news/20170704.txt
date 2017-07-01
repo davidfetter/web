@@ -1,0 +1,135 @@
+#date: 20170704
+#title_ja: ヘテロDB株式会社を設立しました
+#title_en: HeteroDB,Inc was established
+#subtitle_ja: ヘテロジニアスコンピューティング技術のデータベース領域への適用に向けて
+#subtitle_en: For adoption of heterogeneous computing technology onto database area
+<p>
+<span lang="ja">
+本日、PG-Strom Development Teamのコアメンバである海外浩平、および柏木岳彦は、GPUやSSD、FPGAなどヘテロジニアス・コンピューティング技術を活用し、高性能と低価格、運用しやすさを両立するデータベース製品、ソリューション、および関連サービスを提供する新会社、ヘテロDB株式会社を設立した事をお知らせします。
+</span>
+<span lang="en"></span>
+</p>
+<p>
+<dl>
+<dt>
+<span lang="ja">新会社のミッション</span>
+<span lang="en">Mission of the new company</span>
+                </dt>
+                <dd>
+<p>
+<span lang="ja">
+私たちは今、何十年に一度の計算機アーキテクチャの変革期という、非常に面白い時代に生きています。
+ムーアの法則が終焉に近づき、プロセッサはマルチコアからメニーコアへと進化し、さらにはGPUやFPGAといった設計思想の異なる半導体デバイスを併用しなければ性能向上が見込めない世界がすぐそこまで来ています。
+これらのヘテロジニアスな計算機アーキテクチャにおいては、ソフトウェアはハードウェアの進化に"ただ乗り"する事はできません。ハードウェアの能力を引き出すために、最適なソフトウェアを再設計する必要があるのです。
+</span>
+<span lang="en"></span>
+</p>
+<p>
+<span lang="ja">
+私たちは、5年あまり前からGPUの並列計算能力を用いてPostgreSQLのワークロードを高速化するオープンソースの拡張モジュール「PG-Strom」の開発に取り組んできました。
+ソフトウェア開発者として純粋にこの技術領域が面白いという他に、データベース管理システムという最も広範に人と社会を支えているソフトウェアの改良を通じて、さらにはオープンソースソフトウェアのエコシステムを通じて、ヘテロジニアスコンピューティングという次世代の計算機アーキテクチャの力を、世界中のユーザが気軽に手の届くものにするという使命感に支えられてのものです。
+</span>
+<span lang="en"></span>
+</p>
+
+<p>
+<span lang="ja">
+本日創業したヘテロDB株式会社は、次の３つのミッションの実現を目的としています。
+</span>
+<span lang="en"></span>
+<ul>
+<li>
+<span lang="ja">
+PG-Stromをはじめとする、ヘテロジニアスコンピューティング技術を組込んだデータベース製品を実現し、速さ、安さ、使いやすさを両立するデータ処理基盤を提供すること。
+</span>
+<span lang="en"></span>
+</li>
+<li>
+<span lang="ja">
+GPUとデータベースという異なる技術領域に精通したプロフェッショナルであり、お客様の課題に対する深い洞察から最適な解決方法を導き出す事。
+</span>
+<span lang="en"></span>
+</li>
+<li>
+<span lang="ja">
+企業や国、技術領域の壁を越え、広くイノベーションの成果をオープンソースコミュニティに還元し、エコシステムの発展に寄与すること。
+</span>
+<span lang="en"></span>
+</li>
+</ul>
+<span lang="ja">
+そして何より、エンジニアがわくわくするようなテクノロジーを形にし、ユーザ様ひいては社会のの課題を今の時代にふさわしい形で解く事で、社会をより良くする事に貢献する企業でありたいと考えています。
+</span>
+<span lang="en">
+</span>
+</p>
+                </dd>
+                <dt>
+<span lang="ja">新会社の概要</span>
+<span lang="en">HeteroDB Overview</span>
+</dt>
+<dd>
+  <ul class="list-unstyled">
+  <li>
+<span lang="ja">商号: ヘテロDB株式会社</span>
+<span lang="en">name: HeteroDB,Inc</span>
+  </li>
+  <li>
+<span lang="ja">設立: 2017年7月1日</span>
+<span lang="en">Established: 4-Jul-2017</span>
+  </li>
+  <li>
+<span lang="ja">代表者: 海外　浩平</span>
+<span lang="en">President: KaiGai Kohei</span>
+  </li>
+  <li>
+<span lang="ja">所在地: 東京都品川区西大井一丁目１番地の２</span>
+<span lang="en">location: 1-1-2, Nishiooi, Shinagawa-ku, Tokyo, Japan</span>
+  </li>
+  <li>
+<span lang="ja">資本金: 999万円</span>
+<span lang="en">capital stock: 9.99M JPY</span>
+  </li>
+  <li>
+<span lang="ja">出資比率: 海外浩平 89.2%、柏木岳彦 10.8%</span>
+<span lang="en">capital share: KaiGai Kohei (89.2%), Kashiwagi Takehiko (10.8%)</span>
+  </li>
+  <li>
+URL： <a href="http://heterodb.com/">http://heterodb.com/</a>
+  </li>
+  </ul>
+</dd>
+<dt>
+<span lang="ja">今後の見通し</span>
+<span lang="en">Future Prospects</span>
+</dt>
+<dd>
+<span lang="ja">
+新会社は、PG-Stromを中核とするソフトウェアの開発、およびアーリーアダプタ利用者様との共同検証、機能・品質改善を経て、2018年3月の製品販売開始を予定しております。
+</span>
+<span lang="en"></span>
+</dd>
+</dl>
+</p>
+<!-- 問い合わせ先 -->
+<div class="panel panel-default" style="padding: 8px">
+  <p>
+    <strong lang="ja">本件に関するお問い合わせ先</strong>
+    <strong lang="en">Contact about this news</strong>
+  </p>
+  <p>
+    <span lang="ja">ヘテロDB株式会社</span>
+    <span lang="en">HeteroDB,Inc</span>
+    <br/>
+    <span lang="ja">メール: contact@heterodb.com</span>
+    <span lang="en">e-mail: contact@heterodb.com</span>
+    <br/>
+    <span lang="ja">電話: 03-6429-9607</span>
+    <span lang="en">tel: +81(36429)9607</span>
+    <br/>
+    <span lang="ja">住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</span>
+    <span lang="en">location: 1-1-2-206, Nishiooi, Shinagawa-ku, Tokyo, Japan</span>
+  </p>
+</div>
+
+
