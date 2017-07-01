@@ -1,0 +1,3 @@
+[submodule "srcdoc"]
+	path = srcdoc
+	url = git@github.com:pg-strom/devel.git
