@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>HeteroDB,Inc - Service</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <!-- HeteroDB CSS -->
+  <link href="css/heterodb.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body style="padding-top: 50px">
+<!-- Language Selector -->
+<input type="radio" name="lang-select" id="lang-ja" value="1">
+<input type="radio" name="lang-select" id="lang-en" value="2">
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="images/heterodb_logo_mono.png" width="128"
+               onmouseover="this.src='images/heterodb_logo_mouseover.png'"
+               onmouseout="this.src='images/heterodb_logo_mono.png'" />
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="index.html">Product</a>
+          </li>
+          <li>
+            <a href="service.html">Service</a>
+          </li>
+          <li>
+            <a href="tech.html">Technology</a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <label for="lang-ja" onclick="document.cookie='lang_setting=ja; path=/';">
+                <a><img src="images/lang_ja.png" />日本語</a>
+                </label>
+              </li>
+              <li>
+                <label for="lang-en" onclick="document.cookie='lang_setting=en; path=/';">
+                <a><img src="images/lang_en.png" />English</a>
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+  <h2 class="page-header">
+<span lang="ja">サービス</span>
+<span lang="en">Service</span>
+  </h2>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#database_tuning" data-toggle="tab">
+<span lang="ja">データベースチューニング</span>
+<span lang="en">Database Tuning</span>
+      </a>
+    </li>
+  </ul>
+  <!-- corporate profile -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="database_tuning" style="margin-top: 10px;">
+      <div class="row" style="margin-bottom:10px">
+        <div class="col-lg-5 col-md-6 col-sm-5 hidden-xs">
+          <img src="images/service_01a.jpg" class="center-block" width="100%" />
+        </div>
+        <div class="col-lg-7 col-md-6 col-sm-7 col-xs-12">
+        <h3>
+<span lang="ja">データベースチューニングサービス</span>
+<span lang="en">Database Tuning Service</span>
+        </h3>
+        <p>
+<span lang="ja">PostgreSQLの内部構造に精通したエンジニアがお客様ワークロードを分析し、性能低下の原因を特定。効果、費用、期間等の観点から、問題ワークロードを高速化する最適な方法をご提案します。</span>
+<span lang="en">Our professional engineer analyzes your workloads based on our detailed knowledge, identifies the causation of query slow-down. Then, we will propose an optimal approach to accelerate the problematic workloads from the viewpoint of cost-effectiveness, project period and so on.</span>
+        </p>
+        <p>
+<span lang="ja">クエリ書換えやデータ構造の修正、パラメータ変更など一般的なチューニング手法では対応が難しい場合でも、<b>PL/CUDA関数化によってワークロードのGPU並列処理化を行う</b>事も可能です。</span>
+<span lang="en">Even case if it is not easy to tune with usual tuning methods, like rewrite of queries, modification of data structure, or parameters reconfiguration, we can port <b>the problematics workloads to PL/CUDA functions for massive parallel execution on GPUs</b>.</span>
+        </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5 class="panel-title">
+<b>Step-1:</b>
+<span lang="ja">ワークロードの分析と診断、対策のご提案</span>
+<span lang="en">Analysis of the workloads, diagnosis, and proposition of measures</span>
+              </h5>
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li>
+<span lang="ja">お客様のワークロードを分析し、問題となっているクエリがどのような原因で性能低下を引き起こしているのか診断します。</span>
+<span lang="en">We analyze your workloads, then make a diagnosis why problematic queries got slow-down.</span>
+                </li>
+                <li>
+<span lang="ja">分析結果に基づき、効果、費用、期間等の観点から、問題ワークロードを高速化する最適な方法をご提案します。</span>
+<span lang="en">Based on the diagnosis, we shall propose an optimal way to accelerate the problematic workloads from the viewpoint of cost-effectiveness, project period and so on.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <img src="images/arrow_down_red.png" class="center-block" width=160 />
+            </div>
+
+            <div class="panel-heading">
+              <h5 class="panel-title">
+<b>Step-2:</b>
+<span lang="ja">クエリ/データ構造の改善やシステム設定の修正によるチューニング</span>
+<span lang="en">Tuning by improvement of queries/data structures, and configuration of system pa and so on</span>
+              </h5>
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li>
+<span lang="ja">クエリの書き換えやデータ構造の修正、あるいはデータベースシステムやOS設定の見直しによるチューニングを行います。（一般的なデータベースチューニング作業の範囲内で、GPU処理化は行いません）
+</span>
+<span lang="en">
+We will provides a professional service for rewrite of queries, modification of data structures, or revising parameters of database system or operating system. (PL/CUDA implementation and GPU execution is not scope of the works.)
+</span>
+                </li>
+                <li>
+<span lang="ja">データベースシステムによるクエリ最適化が十分でない場合、実行速度が100倍、10000倍といった水準で遅くなってしまう事は珍しくありません。GPU処理化を検討する前に、まずは一般的なデータベースチューニングを行われることをお勧めします。
+</span>
+<span lang="en">
+It is not uncommon that query runs 100 or 10000 times slower if query optimization by database system is not sufficient. We like to recommend to apply usual database tuning first, prior to investigation of the special optimization by GPU.
+</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/arrow_down_orange.png" class="center-block" width=160 />
+            </div>
+            <div class="panel-heading">
+              <h5 class="panel-title">
+<b>Step-3:</b>
+<span lang="ja">PL/CUDA関数の適用によるワークロードの並列処理化</span>
+<span lang="en">Utilization of PL/CUDA for massive parallelization</span>
+              </h5>
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li>
+<span lang="ja">
+通常のSQLチューニングでは必要な水準の高速化が見込めない場合、ワークロードのPL/CUDA関数化とGPU並列化による高速化をご提案します。
+</span>
+<span lang="en">
+We will propose to port the problematic workloads to PL/CUDA function and acceleration by GPU parallel execution, if usual SQL tuning makes no sense towards required performance.
+</span>
+                </li>
+                <li>
+<span lang="ja">
+PL/CUDAを用いると、GPUの持つ数千プロセッサコア、数百GB/sの広帯域メモリを最大限に活用した最適化を行うため、従来のSQLチューニングの限界を超えたワークロードの高速化が実現可能です。
+</span>
+<span lang="en">
+PL/CUDA allows to optimize the query using GPU capability (multi-thousands processor cores and multi-hundreds GB/s memory bandwidth), so it enables to accelerate the problematic workloads beyond limitation of existing SQL tuning methods.
+</span>
+                </li>
+                <li>
+<span lang="ja">PL/CUDA技術に関しては<a href="tech.html#pl_cuda" alt="PL/CUDA概要">こちら</a>をご覧ください。</span>
+<span lang="en">Look at <a href="tech.html#pl_cuda" alt="PL/CUDA Overview">the article</a> regarding of the PL/CUDA technology.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-bottom: 20px">
+        <div class="col-md-12">
+          <div class="text-center">
+            <a href="#contact_us" class="btn btn-lg btn-default portfolio-link" data-toggle="modal" style="padding: 16px">
+              <i class="fa fa-fw fa-envelope-o"></i>
+<span lang="ja">お問い合わせ</span>
+<span lang="en">Contact Us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5 class="panel-title">
+<span lang="ja">検証事例 - 創薬ワークロードの高速化</span>
+<span lang="en">Case Study - Acceleration of Drug Discovery Workloads</span>
+              </h5>
+            </div>
+            <div class="panel-body">
+              <img src="images/service_02j.png" class="img-responsive" lang="ja" />
+              <img src="images/service_02e.png" class="img-responsive" lang="en" />
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li>
+                  <a href="blobs/P7129_KAIGAI_PLCUDA.pdf" target="_blank">[EN] PL/CUDA - In-database massive parallel analytics (GTC2017)</a>
+                </li>
+<!-- NECのテンプレを使わない版が必要
+                <li>
+                  <a href="https://www.slideshare.net/kaigai/tpcdspostgresql" target="_blank">[JP] TPC-DSから学ぶPostgreSQLの弱点と今後の展望</a>
+                </li>
+-->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p>Copyright &copy; HeteroDB,Inc 2017</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- pop-up for user contact -->
+  <div class="portfolio-modal modal fade" id="contact_us" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="container">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="text-center">
+<span lang="ja">お問い合わせフォーム</span>
+<span lang="en">Send us a message</span>
+              </h3>
+              <div>
+                <form action="https://formspree.io/contact@heterodb.com"
+                      method="POST"
+                      name="sentMessage" id="contactForm">
+                  <div class="control-group form-group">
+                    <div class="controls">
+                      <label>
+<span lang="ja">お名前:</span>
+<span lang="en">Full Name:</span>
+                      </label>
+                      <input type="text" class="form-control" name="name" required data-validation-required-message="Please enter your name.">
+                      <p class="help-block"></p>
+                    </div>
+                  </div>
+                  <div class="control-group form-group">
+                    <div class="controls">
+                      <label>
+<span lang="ja">会社名:</span>
+<span lang="en">Company:</span>
+                      </label>
+                      <input type="text" class="form-control" name="company" required data-validation-required-message="Please enter your name.">
+                      <p class="help-block"></p>
+                    </div>
+                  </div>
+
+                  <div class="control-group form-group">
+                    <div class="controls">
+                    <label>
+<span lang="ja">電話番号(任意):</span>
+<span lang="en">Phone Number(optional):</span>
+                    </label>
+                    <input type="tel" class="form-control" name="phone">
+                    </div>
+                  </div>
+                  <div class="control-group form-group">
+                    <div class="controls">
+                      <label>
+<span lang="ja">Eメール アドレス:</span>
+<span lang="en">Email Address:</span>
+                      </label>
+                      <input type="email" class="form-control" name="email" required data-validation-required-message="Please enter your email address.">
+                    </div>
+                  </div>
+                  <div class="control-group form-group">
+                    <div class="controls">
+                    <label>
+<span lang="ja">お問い合わせ内容:</span>
+<span lang="en">Message:</span>
+                    </label>
+                    <textarea rows="10" cols="100" class="form-control" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                    </div>
+                  </div>
+                  <div id="success"></div>
+                  <!-- For success/fail messages -->
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fa fa-fw fa-envelope-o"></i> Send Message
+                    </button>
+                    <button type="button" class="btn btn-primary text-center" data-dismiss="modal">
+                      <i class="fa fa-times"></i> Close Form
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> <!-- end of row -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+<!-- #default tab setting -->
+<script type="text/javascript">
+var anchor = location.hash;
+
+if (anchor != '')
+{
+  console.log('open tab [' + anchor + ']');
+  $('.nav-tabs a[href=' + anchor + ']').tab('show');
+}
+</script>
+
+<!-- #default language setting -->
+<script type="text/javascript">
+  /* find 'lang_setting' cookie if exists */
+  var lang_setting = null;
+  if (document.cookie != '')
+  {
+    var cookies = document.cookie.split(';');
+    for (var i=0; i < cookies.length; i++)
+    {
+      var cookie = cookies[i].split('=');
+      if (cookie[0].trim() == "lang_setting")
+      lang_setting = decodeURIComponent(cookie[1].trim());
+    }
+  }
+  if (!lang_setting || !lang_setting.match(/^(ja|en).*/))
+  {
+    lang_setting=navigator.userLanguage ||
+           navigator.browserLanguage ||
+           navigator.language;
+  }
+  console.log("Lang setting = "  + lang_setting);
+  if (lang_setting.match(/^ja.*/))
+    document.getElementsByName("lang-select")[0].checked = true;
+  else
+    document.getElementsByName("lang-select")[1].checked = true;
+</script>
+
+</body>
+
+</html>

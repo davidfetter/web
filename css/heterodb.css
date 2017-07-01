@@ -1,0 +1,15 @@
+/* ====== Multilanguage Support ====== */
+input#lang-ja,
+input#lang-en {
+    display: none;
+}
+
+input[id="lang-ja"]:checked ~ *:lang(en),
+input[id="lang-ja"]:checked ~ * *:lang(en) {
+    display: none;
+}
+
+input[id="lang-en"]:checked ~ *:lang(ja),
+input[id="lang-en"]:checked ~ * *:lang(ja) {
+    display: none;
+}
