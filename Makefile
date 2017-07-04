@@ -14,7 +14,8 @@ web-pages: about.html $(WEB_FILES) $(WEB_IMAGES)
 
 about.html: news/about.src.html $(NEWS_SOURCE)
 	TEMP=`mktemp` && news/news_gen.sh $(NEWS_SOURCE) > $$TEMP && \
-	env NEWS_RELEASE_TO_BE_REPLACED="`cat $$TEMP`" envsubst < news/about.src.html > about.html
+	env NEWS_RELEASE_TO_BE_REPLACED="`cat $$TEMP`" envsubst < news/about.src.html > about.html && \
+	rm -f $TEMP
 
 $(WEB_FILES): $(HTML_SOURCES) $(WEB_TEMPLATE)
 	echo $(WEB_FILES)

@@ -522,6 +522,16 @@ Optimization for time series data
 <span lang="en">Mar-2018</span>
           </td>
         </tr>
+        <tr>
+          <td>
+<span lang="ja">備考</span>
+<span lang="en">Remarks</span>
+          </td>
+          <td colspan="2">
+<span lang="ja">※製品構成は現時点での参考構成であり、製品リリースまでに変更となる事があります。</span>
+<span lang="en">Please note that hardware configuration may change by the production release.</span>
+          </td>
+        </tr>
         </table>
       </div>
     </div>
@@ -584,6 +594,9 @@ Optimization for time series data
 GPUには数千個のプロセッサコアが搭載されており、また、これらのプロセッサにデータを供給するメモリバスは数百GB/sの帯域を持っています。これらのハードウェアリソースは並列計算において極めて有効に作用し、CPUと比べて非常に高い価格対性能比を発揮します。
 </span>
 <span lang="en">
+A GPU device has thousands processor cores, and high throughput memory bus more than hundreds GB/s to provide data to the processors.
+These hardware resource works very efficiently on parallel computing, thus GPU can offer much higher price-performance ratio.
+
 </span>
                 </dd>
                 <dd>
@@ -591,6 +604,8 @@ GPUには数千個のプロセッサコアが搭載されており、また、�
 GPUが得意とする並列計算の典型例は行列演算ですが、これは大量の均質なデータに対してそれぞれ同一の演算を行っているためです。SQLにも類似の処理はいくつかあり、例えば全件スキャンにおいて各レコード毎にWHERE句の条件を評価するといった処理が典型です。
 </span>
 <span lang="en">
+A typical parallel computing workload where GPU has advantage is matrix operations, because it issues identical calculations on massive amount of uniformed data set.
+SQL has several similar workloads, like evaluation of WHERE-clause for each record on full table scan.
 </span>
                 </dd>
                 <dt>
@@ -602,6 +617,7 @@ GPUが得意とする並列計算の典型例は行列演算ですが、これ�
 PG-StromはPostgreSQL向けの拡張モジュールで、一部のSQLワークロードをGPUの並列演算能力を活用して高速化するために開発されました。
 </span>
 <span lang="en">
+PG-Strom is an extension for PostgreSQL, designed to accelerate a few SQL workloads using parallel computing capability of GPUs.
 </span>
                 </dd>
                 <dd>
@@ -609,6 +625,8 @@ PG-StromはPostgreSQL向けの拡張モジュールで、一部のSQLワーク�
 CPU集約的なワークロードであるWHERE句、JOIN、GROUP BY処理のGPU実行に対応しており、コスト評価の結果PostgreSQLのクエリオプティマイザがGPUでの実行を選択した場合、エグゼキュータはPostgreSQL本体の実装の代わりに、PG-Stromモジュールを呼び出してSQLを処理させます。
 </span>
 <span lang="en">
+It supports on-GPU execution of WHERE-clause, JOIN and GROUP BY; these are CPU intensive workloads.
+Once query optimizer of PostgreSQL chooses the execution on GPU, its executor calls PG-Strom module, instead of PostgreSQL built-in implementation, to process SQL workloads.
 </span>
                 </dd>
                 <dd>
@@ -616,6 +634,7 @@ CPU集約的なワークロードであるWHERE句、JOIN、GROUP BY処理のGPU
 GPUで処理すべきワークロードはクエリごとに異なります。そのため、PG-StromはSQLから自動的にGPU用のプログラムを生成して実行時コンパイルを行い、これをGPU側で非同期・並列実行しています。
 </span>
 <span lang="en">
+The workloads to be processed on GPU are various for each query, thus, PG-Strom automatically constructs a GPU program and builds it on run time, then execute the program asynchronously and in parallel on GPUs
 </span>
                 </dd>
               </dl>
@@ -645,6 +664,8 @@ PG-StromはSQL構文がパースされた後の内部データ構造を参照し
 したがって、特別なSQL命令を与える必要はなく、&quot;重い処理&quot;だけを選択して透過的にGPUで実行する事ができるのです。
 </span>
 <span lang="en">
+PG-Strom references the internal data structure that is already parsed from SQL statement, to determine whether it can run the workloads on GPUs.
+So, no special SQL commands are needed. It selectively picks up &quot;heavy workloads&quot; and transparently runs on GPUs.
 </span>
               </div>
             </div>
@@ -663,6 +684,7 @@ PG-StromはSQL構文がパースされた後の内部データ構造を参照し
 PG-StromはPostgreSQLのデータ構造／ストレージ形式をそのまま使用します。そのため、特別なテーブルへデータを移行したり、データ形式を変換したりする事なく利用する事が可能です。
 </span>
 <span lang="en">
+PG-Strom utilizes the data schema and storage format of PostgreSQL, so no need to migrate your data to special tables, or to transform data format.
 </span>
               </div>
             </div>
@@ -681,6 +703,7 @@ PG-StromはPostgreSQLのデータ構造／ストレージ形式をそのまま�
 PG-StromはPostgreSQLが標準でサポートするインターフェースのみを用いて実装されています。そのため、PostgreSQL本体へのパッチや特別な修正なしに利用する事ができます。
 </span>
 <span lang="en">
+PG-Strom is implemented on top of the standard interfaces supported by PostgreSQL, so no special patches to PostgreSQL are needed.
 </span>
               </div>
             </div>
@@ -727,6 +750,8 @@ PG-StromはPostgreSQLが標準でサポートするインターフェースの�
 結果としてCPU/RAMへ転送すべきI/O量が減少するため、I/Oが負荷の中心であるSQLワークロードであっても、GPUの手助けによって高速化が可能となります。
 </span>
 <span lang="en">
+When data blocks of PostgreSQL on the storage are loaded, SSD-to-GPU direct SQL execution mechanism transfers the data chunks to GPU first, prior to the loading onto CPU/RAM, then runs WHERE-clause, JOIN and GROUP BY workloads which usually works to eliminated unnecessary rows.
+In the results, our mechanism reduces amount of the data size to be loaded to CPU/RAM, thus, it looks GPU accelerates this kind of SQL workloads even if it is I/O intensive.
 </span>
                 </dd>
                 <dd>
@@ -734,6 +759,7 @@ PG-StromはPostgreSQLが標準でサポートするインターフェースの�
 CPUの視点からNVMe-SSDとGPUの協調動作を眺めると、あたかもストレージ機器がSQLワークロードを解釈し、不要である事が分かり切っているデータを削除、あるいは前処理を行った上でデータを読み出しているかのように見えます。
 </span>
 <span lang="en">
+From the viewpoint of CPU, the collaboration of NVMe-SSD and GPU looks an intelligent storage device which can understand SQL workloads, for elimination of definitely unnecessary rows or for pre-process to the post stage.
 </span>
                 </dd>
 
@@ -747,14 +773,19 @@ CPUの視点からNVMe-SSDとGPUの協調動作を眺めると、あたかもス
 物理アドレスに紐づける事ができれば、PCIeデバイスとのDMAの際に、マップしたGPUデバイスメモリをデータ転送先/元として使用する事ができるようになりますが、この時、データ転送パスはCPU/RAMを介さずにピアツーピアで行われます。
 </span>
 <span lang="en">
+Technology basis of this mechanism is GPUDirect RDMA which is a unique functionality in Tesla/Quadro GPU of NVIDIA.
+It allows to map a particular region of GPU device memory on physical address space of host systems.
+Once GPU device memory got a physical address on host system, it can be utilized for source or destination address of DMA data transfer with third party PCIe devices. In this case, data moves over PCIe bus peer-to-peer, without any relay by CPU/RAM.
 </span>
                 </dd>
                 <dd>
 <span lang="ja">
-GPUDirect RDMAは本来、MPI over Infinibandを実現するために開発された機能ですが、カスタムLinux kernel moduleがGPUデバイスメモリとPCIeデバイスとの間を適切に仲介すれば、他のPCIeデバイスとも共存できない理由はありません。
+GPUDirect RDMAは本来、MPI over Infinibandを実現するために開発された機能ですが、カスタムLinux kernel moduleがGPUデバイスメモリとPCIeデバイスとの間のDMAを適切に仲介すれば、他のPCIeデバイスとも共存できない理由はありません。
 私たちはこれを、NVMe-SSDとGPUとの間を密連携させるために利用しました。
 </span>
 <span lang="en">
+GPUDirect RDMA is a feature originally designed for MPI over Infiniband, on the other hands, there is no reason why we cannot apply this feature on other type of PCIe devices if custom Linux kernel module intermediates DMA transfer between GPU device memory and PCIe device.
+We utilized this infrastructure for the close cooperation between NVMe-SSD and GPU.
 </span>
                 </dd>
               </dl>
@@ -785,12 +816,15 @@ GPUDirect RDMAは本来、MPI over Infinibandを実現するために開発さ�
 PostgreSQLが通常用いるファイルシステム経由のI/Oでは、ストレージからデータブロックを読み出し、アプリケーションのバッファにデータを転送するまでに何回もコピーを繰り返す事になり、これらはデータ量に比例してCPUサイクルを消費する事になります。
 </span>
 <span lang="en">
+The filesystem based I/O, usually used by PostgreSQL, takes multiple buffer copies on storage block read.
+It also consumes CPU cycles according to the data size.
 </span>
                 </p><p>
 <span lang="ja">
 SSD-to-GPUダイレクトSQL実行を用いた場合、SSDから読み出されたデータはGPUのバッファに直接、しかも非同期に転送されます。これにより、CPUやGPUをデータコピー処理から解放し、SQLワークロードの処理という本来の仕事に全ての処理サイクルを費やす事が可能となるのです。
 </span>
 <span lang="en">
+In case of SSD-to-GPU direct SQL execution, data blocks read from SSD are transferred to the buffer on GPU device directly and asynchronously. It releases CPU/GPU from the workload of data copy, and allows them to focus on SQL workloads processing; only CPU/GPU can do.
 </span>
                 </p>
               </div>
@@ -811,12 +845,14 @@ SSD-to-GPUダイレクトSQL実行を用いた場合、SSDから読み出され�
 元々、PG-StromはPostgreSQLのレコード（行データ形式）に対して、GPU上でWHERE句、JOIN、GROUP BYを実行する機能を持っており、多くの場合、これらのSQL操作はレコード数を減少させる方向に作用するという特性があります。
 </span>
 <span lang="en">
+PG-Strom originally has a feature to execute WHERE-clause, JOIN and GROUP BY on GPU device to PostgreSQL's records (row data format). These SQL operations work to reduce number of records in most cases.
 </span>
                 </p><p>
 <span lang="ja">
 したがって、SSDから読み出したPostgreSQLデータブロックをGPUで前処理する事により、結果としてCPU/RAMにロードすべきI/O量を減少させる事が可能となります。そのため、非常に高いスループットでデータブロックを読み出しているにも関わらず、CPUが実際に処理すべきレコード数は遥かに少ないため、SSDの限界性能に近い処理速度を発揮できます。
 </span>
 <span lang="en">
+Thus, pre-processing data blocks of PostgreSQL read from SSD by GPU allows to reduce amount of I/O to be loaded onto CPU/RAM in the results. Even though data blocks are loaded with very high throughput, much smaller number of records shall be processed by CPU, so we can pull out maximum throughput of SSD; which is near to the limit performance.
 </span>
                 </p>
               </div>
@@ -863,6 +899,8 @@ GPUでの並列計算に対応したSQLユーザ定義関数として統計解�
 これにより、データベースからデータをエクスポートする必要がなくなるだけでなく、データサイエンティストの仕事の8～9割とも言われる前処理/後処理をSQLで柔軟に記述する事ができるようになります。
 </span>
 <span lang="en">
+We offer various statistical analytics &amp; machine-learning algorithms as user defined functions of SQL, parallel-executable on GPU devices. It allows to build the most computing intensive core portion of the algorithms into SQL statement.
+This feature does not only eliminate the need to export data from database system, but also allows to describe the pre-processing / post-processing portion, which often consumes 80-90% of data scientist's work, using SQL's flexibility.
 </span>
                     </p>
                   </dd>
@@ -876,9 +914,10 @@ PL/CUDAとは、SQLユーザ定義関数をGPU向け並列計算用プログラ�
 また、広く利用される"定番の"統計解析・機械学習アルゴリズムをライブラリ化（開発中）しており、データベースに格納したデータをこれらのPL/CUDA関数に渡すだけで、SQLで高度なデータ処理を実現できるようになります。
 </span>
 <span lang="en">
+PL/CUDA is a feature to implement user defined function (UDF) in SQL, by CUDA C which is a programming language for GPU parallel computing.
+A library of statistical analytics &amp; machine-learning algorithms frequently used is under development on top of PL/CUDA. It allows advanced analytics on SQL, using these PL/CUDA functions.
 </span>
                   </dd>
-
                 </dl>
               </div>
             </div>
@@ -903,9 +942,11 @@ PL/CUDAとは、SQLユーザ定義関数をGPU向け並列計算用プログラ�
                 <p>
 <span lang="ja">
 数値データの正規化やサンプリング母集団の選択、入力する属性の選択など、統計解析・機械学習アルゴリズムを実行するには様々な前処理が必要となります。
-これらの計算量は決して大きくはないものの、一連の前処理をスクリプトで書こうとすると、デバッグや異常値検査に相当な手間を取られる上に、選択すべきデータが変わったときのコード再利用性も不十分です。
+これらの計算量は決して大きくはないものの、一連の前処理をスクリプトで書こうとすると、デバッグや外れ値検査に相当な手間を取られる上に、選択すべきデータが変わったときのコード再利用性も不十分です。
 </span>
 <span lang="en">
+Statistical analytics &amp; machine-learning algorithms take various pre-processing like normalization, selection of population or attributes.
+Amount of calculation for them are not so big, however, it takes additional works for debug or outlier checks if we try to implement the pre-processing with script. Also, software reusability is not sufficient when we try on different data set.
 </span>
                 </p>
                 <p>
@@ -914,11 +955,14 @@ SQLにはデータ解析を支援する様々なコマンド群が備わって�
 これらの前処理をin-databaseで行った上で、計算負荷の高い部分だけをPL/CUDA関数で実行するという使い方ができます。
 </span>
 <span lang="en">
+SQL has various commands that support data analytics. For example, we can easily switch sampling population with WHERE-clause, normalize numaric variables using expression formula in SQL, or eliminate outlier values with CHECK() constraint.
+We can leverage SQLs for the pre-processing in database, and kick PL/CUDA function to execute calculation intensive portion only.
 </span>
 <span lang="ja">
-また、統計解析・機械学習アルゴリズムの処理結果を、例えば別のテーブルとJOINしたり、スコア順にORDER BYして必要なデータだけを取り出すといった柔軟性も、SQLを利用できるin-databaseのアプローチならではです。
+また、統計解析・機械学習アルゴリズムの処理結果を、例えば別のテーブルとJOINしたり、ORDER BY句でスコア順に並べ替えて必要なデータだけを取り出すといった柔軟性も、SQLを利用できるin-databaseのアプローチならではです。
 </span>
 <span lang="en">
+Plus, results of the advanced algorithms can be joined to other tables, sorted according to the score to pick up required data only. These flexibility is a characteristic of SQL and in-database approach.
 </span>
 
                 </p>
@@ -941,6 +985,8 @@ SQLにはデータ解析を支援する様々なコマンド群が備わって�
 サンプリング母集団や入力する属性を変えながらトライ&amp;エラーを繰り返すのであればなおさらです。
 </span>
 <span lang="en">
+Multi-terabytes class local storage is not rare for the modern hardware. On the other hands, it is a time consuming job if we try to export multi-gigabytes data then script imports and processes.
+Unignorable time will be needed, if user runs over try &amp; error with different sampling population or chosen attributes.
 </span>
                 </p>
                 <p>
@@ -949,6 +995,8 @@ SQLにはデータ解析を支援する様々なコマンド群が備わって�
 これは単にデータ転送やローカルストレージへ書き込む際のI/Oを省略するだけでなく、データの入出力に伴うバイナリ⇔テキスト間のデータ形式変換に伴うCPU負荷の軽減にも繋がります。
 </span>
 <span lang="en">
+By invocation of statistical analytics &amp; machine-learning algorithms in database system, we can keep a data set read from the tables on memory, which can be processed by thousands cores of GPU in parallel.
+It is not only elimination of I/O for the data transfer over network or writing out to local storage, it also reduces CPU workloads for transformation between binary and text format due to data input and output.
 </span>
                 </p>
                 <p>
@@ -956,12 +1004,12 @@ SQLにはデータ解析を支援する様々なコマンド群が備わって�
 前処理/アルゴリズム実行/後処理という一連のステップを全てデータベースシステム内で完結する事で、データを解析した結果である"ナレッジ"だけを出力するという事が可能になるのです。
 </span>
 <span lang="en">
+Once a series of workloads, pre-processing/advanced algorithms/post-processing, gets completed in database system, it allows to output only "knowledge" which is results of data analytics.
 </span>
                 </p>
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col-xs-12">
               <div class="text-center">
