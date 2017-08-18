@@ -152,7 +152,7 @@ HeteroServerには、データ活用の一連のライフサイクル～蓄積�
 </span>
 <span lang="en">
 HeteroServer has all the required feature to handle a series of data processing life-cycle; collection, summarize, statistical analytics and machine-learning.
-It build massive ammount of data processing capability into a single node by utilization of new-generation hardware like GPU or NVMe-SSD and advanced software which pull out maximum capability of the hardware.
+It builds massive amount of data processing capability into a single node by utilization of new-generation hardware like GPU or NVMe-SSD and advanced software which pull out maximum capability of the hardware.
 </span>
             </p>
             <p>
@@ -246,7 +246,7 @@ SSD-to-GPU Direct SQL Execution enables to pull out maximum capability of scan p
 PL/CUDA機能と統計解析・機械学習ライブラリは、GPUを用いて高度なアルゴリズムの並列実行を"データのある場所で"実行する事を可能にします。これはデータ入出力の手間を省くだけではなく、SQLの高度な柔軟性を前処理/後処理に適用できるという事でもあります。
 </span>
 <span lang="en">
-PL/CUDA and statistical analytics and machine-learning library allow to run advanced algorithms in parallel using GPUs on the data location. It is not only skip of data export, but utilization of SQL's flexibility on pre-/post-process of data analytics.
+PL/CUDA and statistical analytics and machine-learning library allow to run advanced algorithms in parallel using GPUs on the data location. It is not only skipping data export, but utilization of SQL's flexibility on pre-/post-process of data analytics.
 </span>            </p>
             <p class="text-center">
             <a href="#concept_3" class="btn btn-default portfolio-link" data-toggle="modal">
@@ -319,7 +319,7 @@ Therefore, it allows to replace legacy systems, expensive DWH appliance or clust
           <div class="panel-heading">
             <h4><i class="fa fa-fw fa-compass"></i>
 <span lang="ja">アノマリー検知</span>
-<span lang="en">Anomary Detection</span>
+<span lang="en">Anomaly Detection</span>
             </h4>
           </div>
           <div class="panel-body">
@@ -328,7 +328,7 @@ Therefore, it allows to replace legacy systems, expensive DWH appliance or clust
 クレジットカードの不正使用や振り込め詐欺など、日々のトランザクションデータの中から犯罪性のある取引を見つけるには、&ldquo;普段と違う&rdquo;記録を、なるべく高い頻度で見つけだす必要があります。
 </span>
 <span lang="en">
-We need to find out &ldquo;anomary&rdquo; as frequent as possible, to detect criminal transaction, like credit-card skimming or bank transfer scam, from the daily transactional records.
+We need to find out &ldquo;anomaly&rdquo; as frequent as possible, to detect criminal transaction, like credit-card skimming or bank transfer scam, from the daily transactional records.
 </span>
             </p>
             <p>
@@ -336,8 +336,8 @@ We need to find out &ldquo;anomary&rdquo; as frequent as possible, to detect cri
 HeteroServerを使えば、データベースに格納されたトランザクションデータに対して、直接、統計解析アルゴリズムに基づいた検査を実行する事ができます。これらのロジックはGPUにより高速に計算する事が可能で、また、In-database処理であるため、計算のたびにデータをエクスポートする必要もありません。
 </span>
 <span lang="en">
-HeteroServer supports to run anomary detection logic based on statistical analysis algorithms directly on the transactional records stores in the database.
-GPU can process these logic very fast, and no need to export the database for checking because of in-database processing.
+HeteroServer supports to run anomaly detection logic based on statistical analysis algorithms directly on the transactional records stores in the database.
+GPU can process this logic very fast, and no need to export the database for checking because of in-database processing.
 </span>
             </p>
 <!--
@@ -955,14 +955,14 @@ SQLにはデータ解析を支援する様々なコマンド群が備わって�
 これらの前処理をin-databaseで行った上で、計算負荷の高い部分だけをPL/CUDA関数で実行するという使い方ができます。
 </span>
 <span lang="en">
-SQL has various commands that support data analytics. For example, we can easily switch sampling population with WHERE-clause, normalize numaric variables using expression formula in SQL, or eliminate outlier values with CHECK() constraint.
+SQL has various commands that support data analytics. For example, we can easily switch sampling population with WHERE-clause, normalize numeric variables using expression formula in SQL, or eliminate outlier values with CHECK() constraint.
 We can leverage SQLs for the pre-processing in database, and kick PL/CUDA function to execute calculation intensive portion only.
 </span>
 <span lang="ja">
 また、統計解析・機械学習アルゴリズムの処理結果を、例えば別のテーブルとJOINしたり、ORDER BY句でスコア順に並べ替えて必要なデータだけを取り出すといった柔軟性も、SQLを利用できるin-databaseのアプローチならではです。
 </span>
 <span lang="en">
-Plus, results of the advanced algorithms can be joined to other tables, sorted according to the score to pick up required data only. These flexibility is a characteristic of SQL and in-database approach.
+Plus, results of the advanced algorithms can be joined to other tables, sorted according to the score to pick up required data only. These flexibilities are a characteristic of SQL and in-database approach.
 </span>
 
                 </p>
@@ -1071,7 +1071,7 @@ Once a series of workloads, pre-processing/advanced algorithms/post-processing, 
     </div>
   </div>
 
-  <!-- Use case -- Anomary Detection -->
+  <!-- Use case -- Anomaly Detection -->
   <div class="portfolio-modal modal fade" id="usecase_3" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
       <div class="container">
@@ -1080,7 +1080,7 @@ Once a series of workloads, pre-processing/advanced algorithms/post-processing, 
             <div class="col-md-12">
               <h2 class="text-center">
 <span lang="ja">異常検知</span>
-<span lang="en">Anomary Detection</span>
+<span lang="en">Anomaly Detection</span>
               </h2>
 あとで書く<br>
               <div class="text-center">

@@ -112,6 +112,164 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="panel-group" id="accordion">
+<!-- BEGIN NEWS 20170728 -->
+  <div class='panel panel-default'>
+    <div class='panel-heading' style='padding-left: 5%; padding-right: 5%'>
+      <h4 class='panel-title'>
+        <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='#news20170728'>
+  <span lang='ja'>(2017-07-28)  IPA未踏アドバンスト事業において、弊社従業員の提案が採択されました。</span>
+  <span lang='en'>(28-Jul-2017)  IPA adopted our engineer's proposition for the MITOH advanced program.</span>
+        </a>
+      </h4>
+    </div>
+    <div id='news20170728' class='panel-collapse collapse in'>
+      <div class='panel-body' style='padding-left: 5%; padding-right: 5%'>
+        <p>
+        <h3 class='text-center'>
+<span lang='ja'> IPA未踏アドバンスト事業において、弊社従業員の提案が採択されました。</span>
+<span lang='en'> IPA adopted our engineer's proposition for the MITOH advanced program.</span>
+        </h3>
+        </p>
+        <p class='text-right'>
+<strong lang='ja'>2017年07月28日(金)</strong>
+<strong lang='en'>28-Jul-2017 (Fri)</strong>
+        </p>
+        <!-- Social Plug-in -->
+        <p class='text-right'>
+<span lang='ja'><a href='https://twitter.com/share' class='twitter-share-button' data-url='http://heterodb.com/about.html#news20170728' data-text='- HeteroDB,Inc (2017-07-28)  IPA未踏アドバンスト事業において、弊社従業員の提案が採択されました。'>Tweet</a></span>
+<span lang='en'><a href='https://twitter.com/share' class='twitter-share-button' data-url='http://heterodb.com/about.html#news20170728' data-text='- HeteroDB,Inc (28-Jul-2017)  IPA adopted our engineer's proposition for the MITOH advanced program.'>Tweet</a></span>
+<iframe src='https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fheterodb.com%2Fabout.html%23news20170728&width=82&layout=button_count&action=like&size=small&show_faces=false&share=false&height=21&appId=231051110746798' width='82' height='21' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>
+        </p>
+        <div>
+<p>
+<span lang="ja">
+本日、独立行政法人情報処理推進機構（IPA）は、弊社チーフアーキテクト 海外浩平、同チーフセールスエンジニア 柏木 岳彦、同アルバイト 遠藤克浩の３名の共同提案による『ヘテロジニアスなIn-Databaseデータ解析・機械学習基盤』を含む6件を、第1回 IPA未踏アドバンスト事業の採択案件として発表いたしました。
+</span>
+<span lang="en">
+Today, Information-technology Promotion Agency (IPA) announced six propositions, including <i>&quot;Heterogeneous In-Database Data Analytics &amp; Machine-Learning Platform&quot;</i> jointly proposed by KaiGai Kohei (Chief Architect of HeteroDB), Kashiwagi Takehiko (Chief Sales Engineer of HeteroDB) and Endo Katsuhiro (Engineer of HeteroDB), get adopted to the 1st MITOH advanced program held by IPA.
+</span>
+</p>
+<p>
+<dl>
+<dt>
+<span lang="ja">IPA 未踏アドバンスト事業について</span>
+<span lang="en">about IPA MITOH advanced program</span>
+</dt>
+<dd>
+<p>
+<span lang="ja">
+「未踏アドバンスト事業」は、市場性、開発実現性、事業性を兼ね備えたITを活用した革新的なアイデア・プロトタイプ（製品・サービスの企画・構想を練っている段階、製品・サービスのプロトタイプ開発を継続している段階）を有し、起業または事業化に強い関心を持つ未踏的IT人材に対し、プロジェクトマネージャー等による指導・助言、活動に必要となる資金支援を行う事業です。
+</span>
+<span lang="en">
+IPA MITOH advanced program is a public incubation program for individual persons who have strong motivation for startup and innovative idea (or prototype) that satisfies marketability and technology/business feasibility on IT region, through financial support and advices by project manager.
+</span>
+</p>
+<p>
+<span lang="ja">
+（<a href="https://www.ipa.go.jp/jinzai/advanced/index.html" target="_blank">IPAウェブサイト</a>より引用）
+</span>
+<span lang="en">
+(ref: <a href="https://www.ipa.go.jp/english/humandev/third.html" target="_blank">https://www.ipa.go.jp/english/humandev/third.html</a>)
+</span>
+</p>
+</dd>
+
+<dt>
+<span lang="ja">プロジェクトの概要</span>
+<span lang="en">Project Overview</span>
+</dt>
+<dd>
+<p>
+<span lang="ja">
+本プロジェクトでは、GPUの並列計算能力を活用して解析系SQLの高速化を実現するPostgreSQL向け拡張モジュール（PG-Strom）に、次の機能を実装する。①SSD-to-GPUダイレクトSQL実行機能 （GPU/SSD密結合によるI/O高速化）、②PL/CUDA統計解析・機械学習ライブラリ（In-databaseデータ解析処理）、③行形式⇒列形式の変換に対応したストレージ機構 （ワークロード最適化SSD/キャッシュ）。これら①～③の機能を用いて、GPUやSSDといったコモディティだが強力な処理能力を有するハードウェアと、その能力を最大限に引き出すソフトウェアの組み合わせにより、リレーショナル・データベースという情報システムの中で最もデータが集積するコンポーネントをデータ解析・機械学習の基盤として再定義する。
+</span>
+<span lang="en">
+This project extends PG-Strom that is an extension of PostgreSQL to accelerate analytic queries using parallel computing capability of GPU, to implement three new features below. (1) SSD-to-GPU Direct SQL Execution (I/O acceleration by closely combined SSD and GPU) (2) PL/CUDA library for statistical analytics and machine-learning (In-database data analytics) (3) Storage system with support of row-to-column transformation (SSD/in-memory cache optimized for workloads).
+Using these features, the software pulls out maximum performance of the commodity but strong hardware like GPU or SSD. It enables to re-define relational database management system (RDBMS) that is center of data accumulation in information system, as a platform for data analytics and machine-learning.
+</span>
+</p>
+<p>
+<span lang="ja">
+プロジェクトメンバーの設立する新会社は、前述の技術を搭載した垂直統合型高速DBシステム（仮称：HeteroServer）を製品化し、次の３セグメントをターゲットとしてこれら市場の開拓にあたる。①高性能・低価格を武器とした情報系システムの商用DBからの移行　②高速なI/Oを武器としたネットワーク事業者のログ解析　③In-database処理を武器とした金融・信販事業者のアノマリー検知。
+</span>
+<span lang="en">
+A new company established by the project members will productize a vertically integrated database system which installs these core technologies (tentative name: HeteroServer), then develops the three market segments below. (1) Migration from the commercial database systems by high-performance and cost-effectiveness (2) Log analytics of network companies by ultra fast I/O system (3) anomaly detection for finance or credit companies by in-database processing.
+</span>
+</p>
+<p>
+<span lang="ja">
+新会社は、本垂直統合型高速DBシステムの販売（製品事業）、および、本技術を利用したデータ利活用コンサルティング（サービス事業）の２つを軸とした事業を行う。
+</span>
+<span lang="en">
+The new company will operate two major business segments; production sales of the vertically integrated database system (product business), and professional consulting for data utilization (service business).
+</span>
+</p>
+</dd>
+
+<dt>
+<span lang="ja">プロジェクトメンバー</span>
+<span lang="en">Project Members</span>
+</dt>
+<dd>
+ <dl>
+  <li>
+<span lang="ja">海外 浩平（ヘテロDB株式会社　チーフアーキテクト 兼 代表取締役社長）</span>
+<span lang="en">KaiGai Kohei (Chief Architect &amp; President of HeteroDB,Inc)</span>
+  </li>
+  <li>
+<span lang="ja">柏木 岳彦（ヘテロDB株式会社　チーフセールスエンジニア 兼 取締役副社長）</span>
+<span lang="en">Kashiwagi Takehiko (Chief Sales Engineer &amp; Vice-president of HeteroDB,Inc)</span>
+  </li>
+  <li>
+<span lang="ja">遠藤 克浩（慶應義塾大学　理工学部）</span>
+<span lang="en">Endo Katsuhiro (Keio University, department of science and technology)</span>
+  </li>
+ </dl>
+</dd>
+
+<dt>
+<span lang="ja">今後の見通し</span>
+<span lang="en">Future Prospects</span>
+</dt>
+<dd>
+<span lang="ja">
+今後、未踏アドバンストプロジェクト期間である2017年8月から2018年2月にかけて、IPAおよびプロジェクトマネージャ衛藤バタラ氏の支援、助言の下で、HeteroServer製品の中核技術であるPG-StromやPL/CUDA機械学習ライブラリの開発、およびアーリーアダプタユーザの開拓に取り組んでまいります。
+</span>
+<span lang="en">
+Hereafter, we tackles the development of PG-Strom and PL/CUDA machine-learning library that is a core feature of our HeteroServer product, and the early-adopter development through the MITOH advanced project term; from Aug-2017 to Feb-2018.
+</span>
+</dd>
+</dl>
+</p>
+
+
+<!-- 問い合わせ先 -->
+<div class="panel panel-default" style="padding: 8px">
+  <p>
+    <strong lang="ja">本件に関するお問い合わせ先</strong>
+    <strong lang="en">Contact about this news</strong>
+  </p>
+  <p>
+    <span lang="ja">ヘテロDB株式会社</span>
+    <span lang="en">HeteroDB,Inc</span>
+    <br/>
+    <span lang="ja">メール: contact@heterodb.com</span>
+    <span lang="en">e-mail: contact@heterodb.com</span>
+    <br/>
+    <span lang="ja">電話: 03-6429-9607</span>
+    <span lang="en">tel: +81(36429)9607</span>
+    <br/>
+    <span lang="ja">住所: 品川区西大井1-1-2-206 (西大井創業支援センター内)</span>
+    <span lang="en">location: 1-1-2-206, Nishiooi, Shinagawa-ku, Tokyo, Japan</span>
+  </p>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END NEWS 20170728 -->
 <!-- BEGIN NEWS 20170704 -->
   <div class='panel panel-default'>
     <div class='panel-heading' style='padding-left: 5%; padding-right: 5%'>
@@ -122,7 +280,7 @@
         </a>
       </h4>
     </div>
-    <div id='news20170704' class='panel-collapse collapse in'>
+    <div id='news20170704' class='panel-collapse collapse'>
       <div class='panel-body' style='padding-left: 5%; padding-right: 5%'>
         <p>
         <h3 class='text-center'>
@@ -235,7 +393,7 @@ Most of all, we are a company who makes exciting technologies products, and a co
 <span lang="en">name: HeteroDB,Inc</span>
   </li>
   <li>
-<span lang="ja">設立: 2017年7月1日</span>
+<span lang="ja">設立: 2017年7月4日</span>
 <span lang="en">Established: 4-Jul-2017</span>
   </li>
   <li>
@@ -507,8 +665,8 @@ It presents GPU devices, usually considered as an accelerator of computing inten
 <p>筑波大学 情報学類卒業、同 大学院 経営・政策科学研究科修了</p>
 </span>
 <span lang="en">
-<p>He has more than 10 years experiences for open source software development in especi like PostgreSQL, Linux kernel and so on. He is also known as a major contributor in the PostgreSQL community due to enhancement of security feature and development of FDW/CSP.</p>
-<p>He released the first version of PG-Strom in 2012, then has focused on database acceleration technology using GPU/SSD. In 2017, he established HeteroDB,Inc for productionization of this technology.</p>
+<p>He has more than 10 years experiences for open source software development like PostgreSQL, Linux kernel and so on. He is also known as a major contributor in the PostgreSQL community due to enhancement of security feature and development of FDW/CSP.</p>
+<p>He released the first version of PG-Strom in 2012, then has focused on database acceleration technology using GPU/SSD. In 2017, he established HeteroDB,Inc for productization of this technology.</p>
 <p>2007, Genius programmer/super creator award by IPA. 2014, OSS contributor's award by Japan OSS Promotion Forum.</p>
 <p>Bachelor of computer science, University of Tsukuba. Master of business administration, University of Tsukuba.</p>
 </span>

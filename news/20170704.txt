@@ -93,7 +93,7 @@ Most of all, we are a company who makes exciting technologies products, and a co
 <span lang="en">name: HeteroDB,Inc</span>
   </li>
   <li>
-<span lang="ja">設立: 2017年7月1日</span>
+<span lang="ja">設立: 2017年7月4日</span>
 <span lang="en">Established: 4-Jul-2017</span>
   </li>
   <li>
