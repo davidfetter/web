@@ -958,7 +958,7 @@ shared_preload_libraries = '$libdir/pg_strom'
 </dt>
 <dd>
 <span lang="en">
-We recommend expanding <tt>shared_buffers</tt> configuration from the default, to the expected amount of the data size for on-memory processing.
+We recommend expanding <tt>shared_buffers</tt> configuration from the default, to the expected amount of the data size for in-memory processing.
 <tt>PG-Strom</tt> enables effective query processing with GPU parallelism on CPU intensive workloads. On the other hands, if most of the data to be processed is stored in the magnetic drives, i/o operation shall be the dominance factor, thus, GPU parallelism will not work well.
 So, it is preferable to expand the <tt>shared_buffers</tt> to the amount of data size to be processed, and preload the data using <a href="http://www.postgresql.org/docs/devel/static/pgprewarm.html" target="_blank"><tt>pg_prewarm</tt></a>.
 </span>
